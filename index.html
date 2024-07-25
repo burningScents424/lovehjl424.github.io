@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>随机抽取一个乐妈检测幸运值</title>
+  <link href="index.css" rel="stylesheet">
+  <link href="https://cdn.bootcss.com/highlight.js/9.12.0/styles/arta.min.css" rel="stylesheet">
+  <script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+  <script src="./dist/lottery-wheel.min.js"></script>
+</head>
+
+<body>
+  <div class="wrapper">
+    <header>
+      <h1>幸运大转盘</h1>
+      <h3>够胆你就来</h3>
+    </header>
+
+    <div class="main">
+      <section>
+        <div class="wheel-container">
+          <svg id="wheel"></svg>
+        </div>
+        <script type="text/javascript">
+          wheel({
+            el: document.getElementById('wheel'),
+            radius: 300,
+            buttonWidth: 100,
+            fontSize: 12,
+            buttonFontSize: 26,
+            buttonText: 'Draw',
+            duration: 7000,
+            color: {
+              border: 'silver',
+              prize: 'dimgray',
+              line: 'silver',
+              prizeFont: 'white',
+              button: '#fef5e7',
+              buttonFont: '#34495e'
+            },
+            onSuccess(data) {
+              alert(`You picked up ${data.text}`);
+            },
+            data: [{
+              text: '谢谢惠顾',
+              chance: 12
+            }, {
+              text: 'ID合影',
+              chance: 10
+            }, {
+              text: '再送1分',
+              chance: 15
+            }, {
+              text: '说出hjl的三个优点',
+              chance: 10
+            }, {
+              text: '谢谢惠顾',
+              chance: 15
+            }, {
+              text: '答案之书',
+              chance: 10
+            }, {
+              text: '给hjl推荐明天的晚饭',
+              chance: 10
+            }, {
+              text: '问粉丝问题',
+              chance: 5
+            }, {
+              text: '再送9分',
+              chance: 10
+            }, {
+              text: '飞吻',
+              chance: 3
+            }]
+          });
+        </script>
+    </div>
+    </section>
+
+    <div id="three-container"></div>
+
+
+  </div>
+  </div>
+</body>
+
+</html>
